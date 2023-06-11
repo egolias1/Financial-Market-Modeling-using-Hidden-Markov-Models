@@ -1,0 +1,187 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+\usepackage[T1]{fontenc} % if needed
+
+
+
+\title{Financial Market Modeling using Hidden Markov Models}
+
+
+%% %simple case: 2 authors, same institution
+%% \author{A. Uthor}
+%% \author{and A. Nother Author}
+%% \affiliation{Institution,\\Address, Country}
+
+% more complex case: 4 authors, 3 institutions, 2 footnotes
+\author{Elliot Golias}
+%\author[c]{S. Econd,}
+%\author[a,2]{T. Hird\note{Also at Some University.}}
+%\author[a,2]{and Fourth}
+
+% The "\note" macro will give a warning: "Ignoring empty anchor..."
+% you can safely ignore it.
+
+%\affiliation[a]{One University,\\some-street, Country}
+%\affiliation[b]{Another University,\\different-address, Country}
+%\affiliation[c]{A School for Advanced Studies,\\some-location, Country}
+
+% e-mail addresses: one for each author, in the same order as the authors
+\emailAdd{elliot.golias@gmail.com}
+%\emailAdd{second@asas.edu}
+%\emailAdd{third@one.univ}
+%\emailAdd{fourth@one.univ}
+
+
+
+
+\abstract{This project applies stochastic models in quantitative research 
+and analysis to accurately price options and assess associated risks. Leveraging historical financial data, 
+it encompasses data preprocessing, model selection, parameter estimation, option pricing, risk analysis, 
+and sensitivity analysis. Selected models like Black-Scholes-Merton and Heston are calibrated using 
+optimization techniques. Accurate option prices and key option Greeks are calculated based on 
+estimated parameters and underlying asset prices. Risk analysis utilizes Monte Carlo simulation 
+to evaluate metrics such as VaR and ES. Sensitivity analysis explores the impact of changing model 
+parameters. The project emphasizes documentation, resulting in a comprehensive report. It showcases 
+expertise in option valuation, risk assessment, and quantitative analysis, demonstrating proficiency 
+in data preprocessing, model implementation, and advanced quantitative techniques.}
+
+
+
+\begin{document} 
+\maketitle
+\flushbottom
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{sec:intro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data Collection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{sec:data_collection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Stochastic Models: Black-Scholes-Merton and Heston Models}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{sec:models}
+
+The Black-Scholes-Merton model results from a solution from the stochastic differential equation
+
+\begin{align}
+  \label{eq:BSM-SDE}
+  \d S(t) = \mu S(t) \ d t + \sigma S(t) \ d W(t)
+\end{align}
+
+where $S(t)$ is the price of the asset at time $t$, $\mu$ is the drift or expected return of the asset per unit time,
+$\sigma$ is the volatility of the asset per unit time, and $W(t)$ is a Wiener process.
+
+It is important to note that the the Black-Scholes-Merton stochastic differential equation
+makes several key assumtions:
+
+\begin{itemize}
+  \item Efficient Markets: Markets are efficient and there are no opportunities for arbitrage.
+  \item Constant Parameters: The parameters, specifically the risk-free interest rate $r$, 
+  the volatility of the asset $\sigma$, and the dividen yield $q$, of this model are constant with time
+  \item Continuous Time: Asset prices and other factors change continuously rather than discretely.
+  \item Log-Normal Distribution: The asset price follows a log-normal distribution. 
+  \item No Transaction Costs: There are no brokerage fees, taxes, or other costs associated with the 
+  underlying asset or option.
+  \item No Dividends: The underlying asset does not pay any dividends during the option's lifetime.
+        If the asset does pay dividends, they are assumed to be continuous and accounted for by adjusting the drift
+        term in the stochastic differential equation describing the Black-Scholes model.
+  \item No Market Frictions: There are no liquidity constraints, market impact, trading restrictions, or
+  other market frictions.
+  \item Risk-Neutral Pricing: The expected return for the asset is equal to the risk-free rate. This assumption
+        allows for discounting future payoffs at the discounted rate.
+\end{itemize}
+
+For a European call option, the theoretical price $C$ is given by
+
+\begin{align}
+  C = S_t N(d_1) - X e^{-rT} N(d_2)
+\end{align},
+
+and the theoretical price $P$ of a European put option is given by
+
+\begin{align}
+  P = X e^{-r T} N(d_2) - S_t N(d_1)
+\end{align}
+
+where $S_t$ is the current price of the underlying asset, $X$ is the option's strike price,
+$r$ is the risk-free interest rate, $T$ is the time to expiration in years,
+$N(x)$ is the cumulative standard normal distribution function, and
+
+\begin{align}
+  d_1 &= \frac{\ln{\frac{S_t}{X}} + (r + \sigma^2/2)*T}{\sigma \sqrt{T}} \\
+  d_2 &= d_1 - \sigma \sqrt{t}
+\end{align}
+
+where $\sigma$ is the volatility or standard deviation of the asset's returns.
+
+The Heston model for option pricing extends the Black-Scholes-Merton model by incorporating
+a dynamic process for volatility.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{sec:conclusions}
+
+
+%\appendix
+%\section{Some title}
+%Please always give a title also for appendices.
+
+
+
+
+
+%\acknowledgments
+
+%This is the most common positions for acknowledgments. A macro is
+%available to maintain the same layout and spelling of the heading.
+
+%\paragraph{Note added.} This is also a good position for notes added
+%after the paper has been written.
+
+
+
+
+
+% The bibliography will probably be heavily edited during typesetting.
+% We'll parse it and, using the arxiv number or the journal data, will
+% query inspire, trying to verify the data (this will probalby spot
+% eventual typos) and retrive the document DOI and eventual errata.
+% We however suggest to always provide author, title and journal data:
+% in short all the informations that clearly identify a document.
+
+%\begin{thebibliography}{99}
+
+%\bibitem{a}
+%Author, \emph{Title}, \emph{J. Abbrev.} {\bf vol} (year) pg.
+
+%\bibitem{b}
+%Author, \emph{Title},
+%arxiv:1234.5678.
+
+%\bibitem{c}
+%Author, \emph{Title},
+%Publisher (year).
+
+
+% Please avoid comments such as "For a review'', "For some examples",
+% "and references therein" or move them in the text. In general,
+% please leave only references in the bibliography and move all
+% accessory text in footnotes.
+
+% Also, please have only one work for each \bibitem.
+
+
+%\end{thebibliography}
+\end{document}
