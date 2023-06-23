@@ -19,8 +19,8 @@
 \ProvidesPackage{jheppub}[2018/12/04 v.1.1227]
 
 
-\gdef\@fpheader{Prepared for submission to JHEP}
-\gdef\@journal{jhep}
+%\gdef\@fpheader{Prepared for submission to JHEP}
+%\gdef\@journal{jhep}
 
 \newif\ifnotoc\notocfalse
 \newif\ifemailadd\emailaddfalse
@@ -166,7 +166,7 @@
 \pagestyle{empty}
 \thispagestyle{titlepage}
 \setcounter{page}{0}
-\noindent{\small\scshape\@fpheader}\@preprint\par
+%\noindent{\small\scshape\@fpheader}\@preprint\par
 \afterLogoSpace
 % Subheader
 \if!\@subheader!\else\noindent{\trfont{\@subheader}}\fi
