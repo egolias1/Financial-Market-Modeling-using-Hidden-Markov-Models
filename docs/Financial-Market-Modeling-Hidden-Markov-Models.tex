@@ -177,43 +177,29 @@ are given by $P_{ij}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:ML-and-HHM}
 
-\subsection*{Integration of Machine Learning Techniques in HMMs}
-
 Hidden Markov Models (HMMs) provide a powerful framework for modeling sequential data with probabilistic dependencies. Integrating machine learning techniques enhances the capabilities of HMMs, allowing for improved modeling and analysis of sequential data. In this section, we will describe the integration of machine learning techniques at a mathematical level, providing insights for professional quantitative researchers.
-
-\subsection*{Enhanced Model Training and Parameter Estimation}
 
 Traditionally, HMMs are trained using the expectation-maximization (EM) algorithm, such as the Baum-Welch algorithm, to estimate model parameters from labeled training data. However, machine learning techniques offer alternative optimization algorithms that can enhance model training.
 
 For example, gradient-based optimization methods, like stochastic gradient descent, can be employed to optimize HMM parameters. We can define the log-likelihood function $\mathcal{L}(\theta)$, where $\theta$ represents the HMM parameters. By iteratively updating the parameters in the direction of steepest descent, we can maximize the log-likelihood function, leading to improved convergence and potentially better model performance.
 
-\subsection*{Incorporation of Advanced Feature Extraction Methods}
-
 Machine learning techniques, such as recurrent neural networks (RNNs) and long short-term memory (LSTM) networks, can be utilized to extract higher-level features from raw sequential data. These learned representations can then be integrated into the HMM framework, enhancing its ability to capture complex patterns and dependencies in the data.
 
 Let $\mathbf{X} = {\mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_T}$ represent the input sequence, where each $\mathbf{x}_t$ is a data point. The RNN or LSTM can be trained to capture the temporal dependencies within the sequence, resulting in a transformed sequence $\mathbf{H} = {\mathbf{h}_1, \mathbf{h}_2, \ldots, \mathbf{h}_T}$. The transformed sequence $\mathbf{H}$ can then serve as input to the HMM, replacing the raw data $\mathbf{X}$.
-
-\subsection*{Handling Diverse Data Types and Applications}
 
 Machine learning techniques enable the adaptation of HMMs to various data types and applications. For instance, support vector machines (SVMs) or random forests can be incorporated as observation models in the HMM, allowing the model to handle structured or heterogeneous data.
 
 Suppose we have $K$ different types of observations in the sequence. Instead of assuming a single probability distribution for observations, we can model each type with separate models, such as SVMs or random forests. The observations at each time step are then classified using these models, providing richer information for the HMM.
 
-\subsection*{Ensemble Methods for Improved Performance}
+Ensemble methods offer a way to enhance the performance of HMMs through the combination of multiple models. By leveraging techniques like boosting or bagging, researchers can create ensembles of HMMs or other machine learning models. 
 
-Ensemble methods offer a way to enhance the performance of HMMs through the combination of multiple models. By leveraging techniques like boosting or bagging, researchers can create ensembles of HMMs or other machine learning models.
-
-Let $\mathcal{M}_1, \mathcal{M}_2, \ldots, \mathcal{M}_n$ represent $n$ different HMMs. Each HMM can be trained on a different subset of the data or using different initialization schemes. The final prediction or estimation is obtained by aggregating the outputs of these models, providing better generalization, mitigating overfitting, and improving robustness.
-
-\subsection*{Incorporation of Domain Knowledge and Expert Insights}
+Let $\mathcal{M}_1, \mathcal{M}_2, \ldots, \mathcal{M}_n$ represent $n$ different HMMs. Each HMM can be trained on a different subset of the data or using different initialization schemes. The final prediction or estimation is obtained by aggregating the outputs of these models, providing better generalization, mitigating overfitting, and improving robustness. In the context of this project, the results of composite HHMs modeling the stock price fluctuations will be agreggated via a voting classifier in python.
 
 The integration of machine learning techniques facilitates the incorporation of domain knowledge and expert insights into HMMs. Techniques like transfer learning, domain adaptation, or active learning can be utilized to leverage prior knowledge or labeled data from related domains, enhancing the performance of HMMs in specific contexts.
 
 For instance, in transfer learning, knowledge gained from training an HMM on a source domain can be transferred to a target domain with limited labeled data. By leveraging the similarities between the domains, the HMM can benefit from the existing knowledge, improving its performance in the target domain.
 
-\subsection*{Conclusion}
-
-By integrating machine learning techniques into Hidden Markov Models, professional quantitative researchers can enhance the modeling and analysis of sequential data. Advanced optimization algorithms, feature extraction methods, handling diverse data types, ensemble methods, and the incorporation of domain knowledge collectively contribute to more powerful and versatile HMMs. These integrations open up new opportunities for quantitative researchers to tackle complex problems and extract valuable insights from sequential data in various domains.
+By integrating machine learning techniques into Hidden Markov Models, researchers can enhance the modeling and analysis of sequential datasets. Advanced optimization algorithms, feature extraction methods, handling diverse data types, ensemble methods, and the incorporation of domain knowledge collectively contribute to more powerful and versatile HMMs for financial data.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Baum-Welch Algorithm}
@@ -418,6 +404,10 @@ The Backward algorithm is based on the principle of dynamic programming, which e
 \section{Data Collection and Preprocessing}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:data_collection}
+
+For the purposes of this project, I utilized the fiancial-data API AlphaVantage to acquire financial data for Apple, Google, Meta, Amazon, and Netflix for the entire year of 2022. For each of the companies, the acquired data had the following features: date, open, high, low, close, adjusted close, volume, dividend amount, split coefficient.
+
+The data acquired through AlphaVantage required very little preprocessing, so it was relatively simple to implement a hidden Markov model.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}

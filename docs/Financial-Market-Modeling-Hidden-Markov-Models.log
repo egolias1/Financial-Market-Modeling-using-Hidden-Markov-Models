@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 JUN 2023 10:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  30 JUN 2023 10:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -591,33 +591,36 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [3] [4]
-Overfull \hbox (13.41116pt too wide) in paragraph at lines 223--227
+Overfull \hbox (13.41116pt too wide) in paragraph at lines 209--213
 \T1/cmr/m/n/10.95 The Baum-Welch al-go-rithm, also known as the forward-backward al-go-rithm or the expectation-
  []
 
-[5] [6] [7] [8] [9] [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 478.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 478.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5] [6] [7] [8] [9] [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 468.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 468.
  (/Users/elliotgolias/Documents/GitHub/Financial-Market-Modeling-using-Hidden-Markov-Models/docs/Financial-Market-Modeling-Hidden-Markov-Models.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 478.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 478.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 468.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 468.
 Package rerunfilecheck Info: File `Financial-Market-Modeling-Hidden-Markov-Models.out' has not changed.
 (rerunfilecheck)             Checksum: E82A26AF3B35F39AAD9BFAD733A07D97;763.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 478.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 468.
  ) 
 Here is how much of TeX's memory you used:
- 20143 strings out of 480608
- 404167 string characters out of 5903631
+ 20136 strings out of 480608
+ 404097 string characters out of 5903631
  662478 words of memory out of 5000000
  35583 multiletter control sequences out of 15000+600000
  549474 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,11n,68p,707b,988s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on /Users/elliotgolias/Documents/GitHub/Financial-Market-Modeling-using-Hidden-Markov-Models/docs/Financial-Market-Modeling-Hidden-Markov-Models.pdf (11 pages, 272103 bytes).
+Output written on /Users/elliotgolias/Documents/GitHub/Financial-Market-Modeling-using-Hidden-Markov-Models/docs/Financial-Market-Modeling-Hidden-Markov-Models.pdf (11 pages, 272062 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 198 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
